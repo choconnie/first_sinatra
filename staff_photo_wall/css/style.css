@@ -14,6 +14,9 @@ body {
     #team-members .member img {
       width: 200px;
       height: 200px; }
+    #team-members .member img:hover {
+      width: 150px;
+      height: 250px; }
     #team-members .member div.name {
       text-align: center; }
 
