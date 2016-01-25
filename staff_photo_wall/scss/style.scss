@@ -8,8 +8,35 @@ body {
   }
 }
 
+$odd-color: green;
+$even-color: blue;
+
+@mixin change($color: none) {
+            width: 150px;
+            height: 250px;
+            border-style: solid;
+            border-width: 8px;
+            border-color: $color;
+}
+
 #team-members {
   clear: both;
+
+  .member:nth-child(odd):hover {
+            @include change($odd-color);
+            padding: 3em;
+            display: -webkit-flex;
+            display:         flex;
+            -webkit-align-items: center;
+                    align-items: center;
+            -webkit-justify-content: center;
+                    justify-content: center;
+  }
+
+  .member:nth-child(even):hover {
+            @include change($even-color);
+            padding: 3em;
+  }
 
   .member {
             float: left;
@@ -20,11 +47,10 @@ body {
     img {
             width: 200px;
             height: 200px;
-    }
-
-    img:hover {
-            width: 150px;
-            height: 250px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 5px #888888;
+            -webkit-transition: width 2s, height 2s;
+            transition: width 2s, height 2s;
     }
 
     div.name {
